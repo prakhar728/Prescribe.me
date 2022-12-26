@@ -1,0 +1,22 @@
+{
+    "About":"This is about My Site",
+    "Faq":
+    [
+        {
+            "title":"What does on-chain Mean?",
+            "Info":"All your data will be saved on a public blockchain. We would be using Polgyon, a layer-2 Ethereum blockchain that has high transaction speed and low gas fees."
+        },
+        {
+            "title":"Is my data publicly visible to all?",
+            "Info":"Not at all. Privacy is our main concern. The data will only be shared to people you approve and will can be withdrawn whenever needed"
+        },
+        {
+            "title":"Can your platform be hacked?",
+            "Info":"As a team we aim to ensure complete security and won't allow breaches. All the features will be made public only after successfull testing. The main storage lies on the Polygon blockchain, hacking which is virtually impossible"
+        },
+        {
+            "title":"Do I have to pay for it?",
+            "Info":"Good things don't come for free. They do come for minimal charges though.We hope to charge you as less as possible "
+        }
+    ]
+}

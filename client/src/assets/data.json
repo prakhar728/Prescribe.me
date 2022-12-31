@@ -18,5 +18,11 @@
             "title":"Do I have to pay for it?",
             "Info":"Good things don't come for free. They do come for minimal charges though.We hope to charge you as less as possible "
         }
+    ],
+    "Featues":[
+        {
+            "title" :"Feature1",
+            "line":"This is one line"
+        }
     ]
 }

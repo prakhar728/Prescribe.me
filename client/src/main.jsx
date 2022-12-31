@@ -12,7 +12,9 @@ import ErrorPage from "./pages/Error";
 import Home from './pages/Home'
 import { Provider } from 'react-redux'  
 import {store} from './configureStore'
-
+import MainApp from './pages/MainApp';
+import Doctors from './pages/Doctors'
+import DoctorOrPatient from './pages/DoctorOrPatient'
 const colors = {
   brand: {
     900: '#1a365d',
@@ -20,7 +22,14 @@ const colors = {
     700: '#2a69ac',
   },
   backgroundColors:{
-    1:"#82AAE3" 
+    1:"#14354b" 
+  }
+  ,
+  cp:{
+    1:"#82AAE3",
+    2:"#91D8E4",
+    3:"#BFEAF5",
+    4:"#EAFDFC"
   }
 }
 
@@ -38,6 +47,21 @@ const router = createBrowserRouter([
       },
     ],
   },
+  {
+    path:"/app",
+    element:<DoctorOrPatient />,
+    errorElement: <ErrorPage />,
+    children:[
+      {
+        path:"choice",
+        element:<MainApp />
+      },
+      {
+        path:"doctor",
+        element:<Doctors />
+      }
+    ]
+  }
 ]);
 
 

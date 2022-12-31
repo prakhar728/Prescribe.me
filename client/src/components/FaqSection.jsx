@@ -15,7 +15,6 @@ import data from "../assets/data.json";
 const FaqSection = () => {
     const [faqSection, setFaqSection] = useState([])
     useEffect(() => {
-        console.log(data.Faq);
         setFaqSection(data.Faq)
     }, [])
 

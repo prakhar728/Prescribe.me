@@ -129,7 +129,7 @@ const Navbar = () => {
 
   return (
     <Flex>
-      <Center w="100%" border="1px" height="20vh"  >
+      <Center w="100%" height="20vh"  >
         <Box marginLeft={4}>
           <Image src={logo} alt="App Logo" height="20vh" />
         </Box>

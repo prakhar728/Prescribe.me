@@ -14,6 +14,7 @@ import { Provider } from 'react-redux'
 import {store} from './configureStore'
 import MainApp from './pages/MainApp';
 import Doctors from './pages/Doctors'
+import DoctorMarkVisit from './pages/DoctorMarkVisit';
 import DoctorOrPatient from './pages/DoctorOrPatient'
 const colors = {
   brand: {
@@ -58,7 +59,8 @@ const router = createBrowserRouter([
       },
       {
         path:"doctor",
-        element:<Doctors />
+        // element:<Doctors />
+        element:<DoctorMarkVisit />
       }
     ]
   }

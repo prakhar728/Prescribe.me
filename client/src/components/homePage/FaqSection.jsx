@@ -10,7 +10,7 @@ import {
     Center,
     Heading,
 } from '@chakra-ui/react';
-import data from "../assets/data.json";
+import data from "../../assets/data.json";
 
 const FaqSection = () => {
     const [faqSection, setFaqSection] = useState([])

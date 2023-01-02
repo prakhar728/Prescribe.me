@@ -2,7 +2,8 @@ import { createSlice } from '@reduxjs/toolkit'
 
 const initialState = {
   address:"0x0",
-  signer:""
+  signer:"",
+  instance:""
 }
 
 export const walletSlice = createSlice({
@@ -15,11 +16,14 @@ export const walletSlice = createSlice({
     ,
     updateSigner: (state,action) => {
       state.signer = action.payload
+    },
+    updateInstance:(state,action)=>{
+      state.instance=action.payload
     }
   },
 })
 
 // Action creators are generated for each case reducer function
-export const { updateAddress, updateSigner} = walletSlice.actions
+export const { updateAddress, updateSigner,updateInstance} = walletSlice.actions
 
 export default walletSlice.reducer

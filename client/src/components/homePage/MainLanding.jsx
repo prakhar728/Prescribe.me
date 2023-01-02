@@ -1,6 +1,6 @@
 import { Box, Button, Image, Link, Text } from '@chakra-ui/react'
 import React from 'react'
-import VectorArt from "../assets/LandingGraphic.svg"
+import VectorArt from "../../assets/LandingGraphic.svg"
 import { Link as RouterLink } from "react-router-dom";
 const MainLanding = () => {
     return (

@@ -1,7 +1,11 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import { Box, Button, Center, Flex, HStack, Link, Spacer } from "@chakra-ui/react";
 import { Link as RouterLink } from "react-router-dom";
+import { useDispatch, useSelector } from 'react-redux';
+import ConnectToWallet from '../components/ConnectToWallet';
+
 const App = () => {
+
   return (
     <Flex  height="80vh">
       <Center width="100%">

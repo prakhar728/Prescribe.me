@@ -6,12 +6,14 @@ import logo from "../assets/PrescribeLogo.png";
 import { Image } from '@chakra-ui/react';
 import { networks } from '../assets/networks';
 import { useSelector, useDispatch } from 'react-redux';
-import { updateAddress, updateSigner } from '../features/WalletSlice';
+import { updateAddress, updateSigner,updateInstance } from '../Redux/WalletSlice';
 import { ethers } from "ethers";
+import contractAbi from "../assets/contractsData/Prescribe.json";
+import contractAddress from '../assets/contractsData/Prescribe-address.json'
 const Navbar = () => {
   const [accounts, setCurrentAccount] = useState("");
   const [Network, setNetwork] = useState("")
-
+  const [signer, setsigner] = useState(null);
   const address = useSelector((state) => state.wallet.address);
   const dispatch = useDispatch()
 
@@ -74,8 +76,12 @@ const Navbar = () => {
       window.location.reload();
     }
     const provider = new ethers.providers.Web3Provider(ethereum);
+ 
     const signer = provider.getSigner();
     dispatch(updateSigner(signer))
+    setsigner(signer);
+    const contractInstance = new ethers.Contract(contractAddress.address,contractAbi.abi,signer);
+    dispatch(updateInstance(contractInstance));
     return true;
   }
 
@@ -120,11 +126,19 @@ const Navbar = () => {
       alert('MetaMask is not installed. Please install it to use this app: https://metamask.io/download.html');
     }
   }
-
-
-  // useEffect(() => {
-  //   console.log(address);
-  // }, [address])
+  useEffect(() => {
+    console.log(contractAddress);    
+  }, [])
+  
+  useEffect(() => {
+    
+    if(address!="0x0"){
+      const contractInstance = new ethers.Contract(contractAddress.address,contractAbi.abi,signer);
+      console.log(contractInstance);
+      dispatch(updateInstance(contractInstance));
+    }  
+   
+  }, [address])
 
 
   return (

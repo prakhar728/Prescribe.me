@@ -16,6 +16,7 @@ import MainApp from './pages/MainApp';
 import Doctors from './pages/Doctors'
 import DoctorMarkVisit from './pages/DoctorMarkVisit';
 import DoctorOrPatient from './pages/DoctorOrPatient'
+import DoctorViewRecord from './pages/DoctorViewRecord'
 const colors = {
   brand: {
     900: '#1a365d',
@@ -41,13 +42,7 @@ const router = createBrowserRouter([
     path: "/",
     element: <App />,
     errorElement: <ErrorPage />,
-    children:[
-      {
-        path:"home",
-        element:<Home />
       },
-    ],
-  },
   {
     path:"/app",
     element:<DoctorOrPatient />,
@@ -61,6 +56,10 @@ const router = createBrowserRouter([
         path:"doctor",
         // element:<Doctors />
         element:<DoctorMarkVisit />
+      },
+      {
+        path:"doctor/viewRecord",
+        element:<DoctorViewRecord />
       }
     ]
   }

@@ -1,9 +1,9 @@
 import { Box } from '@chakra-ui/react'
 import React from 'react'
-import FaqSection from '../components/FaqSection'
-import Features from '../components/Features'
-import MainLanding from '../components/MainLanding'
-import WhyUS from '../components/WhyUS'
+import FaqSection from '../components/homePage/FaqSection'
+import Features from '../components/homePage/Features'
+import MainLanding from '../components/homePage/MainLanding'
+import WhyUS from '../components/homePage/WhyUS'
 
 const Home = () => {
   return (

@@ -10,28 +10,30 @@ import {
 } from "react-router-dom";
 import ErrorPage from "./pages/Error";
 import Home from './pages/Home'
-import { Provider } from 'react-redux'  
-import {store} from './configureStore'
+import { Provider } from 'react-redux'
+import { store } from './configureStore'
 import MainApp from './pages/MainApp';
 import Doctors from './pages/Doctors'
 import DoctorMarkVisit from './pages/DoctorMarkVisit';
 import DoctorOrPatient from './pages/DoctorOrPatient'
 import DoctorViewRecord from './pages/DoctorViewRecord'
+import PatientSide from './pages/PatientSide'
+import PatientRecords from './pages/PatientRecords'
 const colors = {
   brand: {
     900: '#1a365d',
     800: '#153e75',
     700: '#2a69ac',
   },
-  backgroundColors:{
-    1:"#14354b" 
+  backgroundColors: {
+    1: "#14354b"
   }
   ,
-  cp:{
-    1:"#82AAE3",
-    2:"#91D8E4",
-    3:"#BFEAF5",
-    4:"#EAFDFC"
+  cp: {
+    1: "#82AAE3",
+    2: "#91D8E4",
+    3: "#BFEAF5",
+    4: "#EAFDFC"
   }
 }
 
@@ -42,26 +44,40 @@ const router = createBrowserRouter([
     path: "/",
     element: <App />,
     errorElement: <ErrorPage />,
-      },
+  },
   {
-    path:"/app",
-    element:<DoctorOrPatient />,
+    path: "/app",
+    element: <DoctorOrPatient />,
     errorElement: <ErrorPage />,
-    children:[
+    children: [
       {
-        path:"choice",
-        element:<MainApp />
+        path: "choice",
+        element: <MainApp />
       },
       {
-        path:"doctor",
+        path: "doctor",
         // element:<Doctors />
-        element:<DoctorMarkVisit />
+        element: <DoctorMarkVisit />
       },
       {
-        path:"doctor/viewRecord",
-        element:<DoctorViewRecord />
+        path: "doctor/viewRecord",
+        element: <DoctorViewRecord />
+      },
+      {
+        path: "patient",
+        element: <PatientSide />,
+        children: [
+          {
+            path: "records",
+            element: <PatientRecords />
+          }
+        ]
       }
     ]
+  }
+  ,{
+    path:"*",
+    errorElement:<ErrorPage />
   }
 ]);
 
@@ -70,9 +86,9 @@ const router = createBrowserRouter([
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
     <Provider store={store}>
-    <ChakraProvider theme={theme}>
-      <RouterProvider router={router} />
-    </ChakraProvider>
+      <ChakraProvider theme={theme}>
+        <RouterProvider router={router} />
+      </ChakraProvider>
     </Provider>
   </React.StrictMode>,
 )

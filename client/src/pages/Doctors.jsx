@@ -11,8 +11,6 @@ import { AddIcon } from '@chakra-ui/icons'
 import { useDispatch, useSelector } from 'react-redux'
 const Doctors = () => {
     const [currentDate, setCurrentDate] = useState("DD/MM/YYYY")
-    const address = useSelector((state)=>state.wallet.address);
-    const dispatch = useDispatch();
     useEffect(() => {
         var today = new Date();
         var dd = String(today.getDate()).padStart(2, '0');
@@ -26,7 +24,7 @@ const Doctors = () => {
     
     return (
         <Box  height="80vh" display="flex" >
-            <Box width="100%" display="flex" justifyContent="center" padding={10}>
+            <Box width="100%" display="flex" justifyContent="center"  padding={10}>
                 <VStack  width="70%" border="1px" padding={4} borderRadius={10} borderColor="grey">
                     {/* PATIENTS DETAILS AND DATE */}
                     <Box display="flex" gap={10} width="80%" justifyContent="space-between" alignItems="center">

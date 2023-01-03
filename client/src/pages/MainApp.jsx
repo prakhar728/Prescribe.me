@@ -15,7 +15,7 @@ const App = () => {
             <Link as={RouterLink} to="/app/doctor"> DOCTOR </Link>
           </Box>
           <Box border="1px" width="40%" height="20vw" display="flex" alignItems="center" justifyContent="center" >
-            <Link as={RouterLink} to="patient"> Patient </Link>
+            <Link as={RouterLink} to="/app/patient"> Patient </Link>
           </Box>
         </Box>
       </Center>

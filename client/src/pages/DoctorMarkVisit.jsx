@@ -42,7 +42,7 @@ const Doctors = () => {
     return (
         <Box  height="80vh" display="flex" border="1px" flexDirection={"column"} >
             <Nav />
-            <Box width="100%" display="flex"  padding={10}  alignItems={"center"} justifyContent="center">
+            <Box width="100%" display="flex"  padding={10}   alignItems={"center"} justifyContent="center" height="100%">
                 <VStack  width="70%" border="1px" padding={4} borderRadius={10} borderColor="grey" height={"fit-content"} gap={"10px"}>
                     {/* PATIENTS DETAILS AND DATE */}
                     <Box display="flex" gap={10} width="80%" justifyContent="space-between" alignItems="center" margin={4}>

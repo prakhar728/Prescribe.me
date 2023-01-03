@@ -15,7 +15,6 @@ const DoctorOrPatient = () => {
     setcurrentAddress(address);
     setinstancesContract(instance)
   }, [address,instance])
-
   return (
     <Box width="100%" height="100vh">
         <Navbar />

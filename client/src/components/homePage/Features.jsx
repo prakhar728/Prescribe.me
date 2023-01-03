@@ -11,7 +11,7 @@ const Features = () => {
     return (
         <Box height="80vh" >
             
-                <Text color="#82AAE3" fontWeight="bold" as="h1" fontSize="4xl" paddingLeft="3%"
+                <Text color="#82AAE3" fontWeight="bold" as="h1" fontSize="5xl" paddingLeft="3%"
                     margin={4}>Features</Text>
                 <Box display="flex" flexWrap="wrap" justifyContent={"space-evenly"} height="80%" alignItems={"Center"}>
                     {featureData.map((feature, key) => {

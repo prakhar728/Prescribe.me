@@ -9,16 +9,18 @@ import {
   RouterProvider,
 } from "react-router-dom";
 import ErrorPage from "./pages/Error";
-import Home from './pages/Home'
 import { Provider } from 'react-redux'
 import { store } from './configureStore'
 import MainApp from './pages/MainApp';
-import Doctors from './pages/Doctors'
 import DoctorMarkVisit from './pages/DoctorMarkVisit';
-import DoctorOrPatient from './pages/DoctorOrPatient'
-import DoctorViewRecord from './pages/DoctorViewRecord'
-import PatientSide from './pages/PatientSide'
-import PatientRecords from './pages/PatientRecords'
+import DoctorOrPatient from './pages/DoctorOrPatient';
+import DoctorViewRecord from './pages/DoctorViewRecord';
+import PatientSide from './pages/PatientSide';
+import PatientRecords from './pages/PatientRecords';
+import Features from './components/homePage/Features';
+import FaqSection from './components/homePage/FaqSection';
+import HomePage from './components/homePage/HomePage';
+
 const colors = {
   brand: {
     900: '#1a365d',
@@ -44,6 +46,24 @@ const router = createBrowserRouter([
     path: "/",
     element: <App />,
     errorElement: <ErrorPage />,
+    children:[
+      {
+        path:"",
+        element:<HomePage />,
+      },
+      {
+        path:"FAQ",
+        element:<FaqSection />
+      },
+      {
+        path:"features",
+      element:<Features />
+      },
+      {
+        path:"*",
+        element:<ErrorPage />
+      }
+    ]
   },
   {
     path: "/app",
@@ -75,10 +95,7 @@ const router = createBrowserRouter([
       }
     ]
   }
-  ,{
-    path:"*",
-    errorElement:<ErrorPage />
-  }
+  
 ]);
 
 

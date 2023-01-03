@@ -19,7 +19,7 @@ const FaqSection = () => {
     }, [])
 
     return (
-        <Box>
+        <Box id="FAQ">
             <Heading as="h1" size="xl" w="100%" textAlign={"Center"} mt={10}>
                 Frequently Asked Questions
             </Heading>

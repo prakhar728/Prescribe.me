@@ -19,7 +19,8 @@ const Navbar = () => {
 
 
   const connectWallet = async () => {
-    if (!checkIfWalletIsConnected()) {
+    if (!await checkIfWalletIsConnected()) {
+      console.log("Connecting wallet"      );
       try {
         const { ethereum } = window;
 
@@ -39,13 +40,14 @@ const Navbar = () => {
         console.log(error)
       }
     }
+    else{
+      console.log("Working!");
+    }
   }
 
   const checkIfWalletIsConnected = async () => {
     // First make sure we have access to window.ethereum
     const { ethereum } = window;
-
-
     if (!ethereum) {
       console.log("Make sure you have MetaMask!");
       return;
@@ -61,7 +63,8 @@ const Navbar = () => {
       dispatch(updateAddress(account))
 
     } else {
-      return console.log('No authorized account found');
+      console.log('No authorized account found');
+      return false;
     }
     // This is the new part, we check the user's network chain ID
     const chainId = await ethereum.request({ method: 'eth_chainId' });
@@ -126,12 +129,9 @@ const Navbar = () => {
       alert('MetaMask is not installed. Please install it to use this app: https://metamask.io/download.html');
     }
   }
+ 
   useEffect(() => {
-    console.log(contractAddress);    
-  }, [])
-  
-  useEffect(() => {
-    
+
     if(address!="0x0"){
       const contractInstance = new ethers.Contract(contractAddress.address,contractAbi.abi,signer);
       console.log(contractInstance);

@@ -1,25 +1,23 @@
-import { Box } from '@chakra-ui/react';
 import React, { useEffect, useState } from 'react'
-import { Outlet } from 'react-router-dom';
-import Navbar from '../components/Navbar2';
-import MainApp from "../pages/MainApp";
-import { useDispatch, useSelector } from 'react-redux'
-import ConnectToWallet from '../components/ConnectToWallet';
+import { Box, Button, Center, Flex, HStack, Link, Spacer } from "@chakra-ui/react";
+import { NavLink as RouterLink } from "react-router-dom";
 
 const DoctorOrPatient = () => {
-  const {address,signer,instance} = useSelector((state)=>state.wallet);
-  const dispatch = useDispatch();
-  const [currentAddress, setcurrentAddress] = useState("0x0")
-  const [instancesContract, setinstancesContract] = useState("")
-  useEffect(() => {
-    setcurrentAddress(address);
-    setinstancesContract(instance)
-  }, [address,instance])
+
   return (
-    <Box width="100%" height="100vh">
-        <Navbar />
-        { currentAddress=="0x0"? <ConnectToWallet />: <Outlet />  } 
-     </Box>
+    <Flex  height="80vh">
+      <Center width="100%">
+        <Box  width="50%" display="flex" justifyContent="space-between">
+          <Box border="1px" width="40%" height="20vw"
+            display="flex" alignItems="center" justifyContent="center" borderRadius={"20px"}>
+            <Link as={RouterLink} to="/app/doctor" fontSize={"3xl"}> DOCTOR </Link>
+          </Box>
+          <Box border="1px" width="40%" height="20vw" display="flex" alignItems="center" justifyContent="center" borderRadius={"20px"} >
+            <Link as={RouterLink} to="/app/patient" fontSize={"3xl"}> PATIENT </Link>
+          </Box>
+        </Box>
+      </Center>
+    </Flex>
   )
 }
 

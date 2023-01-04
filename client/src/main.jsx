@@ -16,10 +16,11 @@ import DoctorMarkVisit from './pages/DoctorMarkVisit';
 import DoctorOrPatient from './pages/DoctorOrPatient';
 import DoctorViewRecord from './pages/DoctorViewRecord';
 import PatientSide from './pages/PatientSide';
-import PatientRecords from './pages/PatientRecords';
+import PatientRecords from './pages/Patients/PatientRecords';
 import Features from './components/homePage/Features';
 import FaqSection from './components/homePage/FaqSection';
 import HomePage from './components/homePage/HomePage';
+import safeImage from "./assets/Safe.svg"
 
 const colors = {
   brand: {
@@ -67,12 +68,12 @@ const router = createBrowserRouter([
   },
   {
     path: "/app",
-    element: <DoctorOrPatient />,
+    element: <MainApp />,
     errorElement: <ErrorPage />,
     children: [
       {
         path: "choice",
-        element: <MainApp />
+        element: <DoctorOrPatient/>
       },
       {
         path: "doctor",

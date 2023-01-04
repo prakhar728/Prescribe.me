@@ -18,23 +18,5 @@
             "title":"Do I have to pay for it?",
             "Info":"Good things don't come for free. They do come for minimal charges though.We hope to charge you as less as possible "
         }
-    ],
-    "Featues":[
-        {
-            "src":"/assets/Safe.svg",
-            "title" :"Feature1EM",
-            "line":"This is one line"
-        },
-        {
-            "src":"/src/assets/Safe.svg",
-            "title" :"Feature2",
-            "line":"This is second line"
-        },
-        {
-            "src":"/src/assets/Safe.svg",
-            "title" :"Feature3",
-            "line":"This is third line"
-        }
-        
     ]
 }

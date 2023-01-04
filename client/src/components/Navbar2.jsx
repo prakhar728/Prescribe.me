@@ -1,8 +1,8 @@
 import React, { useEffect, useState } from 'react'
 import { Box, Button, Center, Flex, Spacer } from '@chakra-ui/react'
-import { Link as RouterLink } from 'react-router-dom';
+import { NavLink as RouterLink } from 'react-router-dom';
 import { Link } from '@chakra-ui/react';
-import logo from "../assets/PrescribeLogo.png";
+import logo from "../assets/LogoInWhite.svg";
 import { Image } from '@chakra-ui/react';
 import { networks } from '../assets/networks';
 import { useSelector, useDispatch } from 'react-redux';
@@ -140,7 +140,20 @@ const Navbar = () => {
    
   }, [address])
 
+  const routes = [
+    {
+      name:"Doctor",
+      link:"/app/doctor"
+    },
+    {
+      name:"Patient",
+      link:"/app/patient"
+    },
+  ]
 
+  const activeStyle ={
+    background:"cp.1"
+  }
   return (
     <Flex>
       <Center w="100%" height="20vh"  >
@@ -149,18 +162,13 @@ const Navbar = () => {
         </Box>
         <Spacer />
         <Box w="40%" display="flex" alignItems="center" justifyContent="space-between" p={3} ml={2} >
-          <Link as={RouterLink} to='/home'>
-            Home
-          </Link>
-          <Link as={RouterLink} to='/home'>
-            FAQ
-          </Link>
-          <Link as={RouterLink} to='/home'>
-            ABOUT
-          </Link>
-          <Link as={RouterLink} to='/home'>
-            PROFILE
-          </Link>
+          {routes.map((route,key)=>{
+            return(
+              <Link as={RouterLink} to={route.link} key={key} fontSize={"3xl"}>
+              {route.name}
+            </Link>
+            )
+          })}
         </Box>
         <Spacer />
         <Box marginRight={2}  >

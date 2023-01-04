@@ -29,8 +29,7 @@ const DoctorViewRecord = () => {
       <Nav />
       <Input value={addressPatient} onChange={e => setaddressPatient(e.target.value)} placeholder="Enter Address of Patient" />
       <Button onClick={getAllRecords}>Get Records</Button>
-      All Records are shown here
-      <Box> {recordsToView && recordsToView.map((record,key)=>{
+      <Box  display="flex" flexDirection={"column"} alignItems="center" justifyContent={"center"}> {recordsToView && recordsToView.map((record,key)=>{
         return(
           <RecordCard Place={record[1]}  Comments={record[2]} Time={record[0]} key={key}/>
         )

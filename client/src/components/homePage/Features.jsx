@@ -1,11 +1,30 @@
-import { Box, Text } from '@chakra-ui/react'
+import { Box, Image, Text } from '@chakra-ui/react'
 import React, { useEffect, useState } from 'react'
 import data from "../../assets/data.json";
 import FeatureCard from './FeatureCard';
+import SafeSVG from "../../assets/Safe.svg";
+
 const Features = () => {
     const [featureData, setfeatureData] = useState([]);
     useEffect(() => {
-        setfeatureData(data.Featues);
+        setfeatureData([
+            {
+                "src":SafeSVG,
+                "title" :"Secure",
+                "line":"All your Data is Saved on top of the Blockchain. The Most secure it can be!"
+            },
+            {
+                "src":"/src/assets/Safe.svg",
+                "title" :"Accessible",
+                "line":"The data is accessible to you anywhere and to any organization you wish."
+            },
+            {
+                "src":"/src/assets/Safe.svg",
+                "title" :"Privacy",
+                "line":"The data is shared with organisations that you trust."
+            }
+            
+        ]);
     }, [])
 
     return (

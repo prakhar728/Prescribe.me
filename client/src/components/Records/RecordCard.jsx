@@ -10,13 +10,13 @@ const RecordCard = ({ Place, Comments, Time }) => {
     }, [])
 
     return (
-        <Box border="1px" display={"flex"}>
+        <Box  display={"flex"} w="60%" borderRadius={"20px"} background="#F0f0f0" marginTop="24px" padding="24px 0"> 
             <Box w="50%" display={"flex"} flexDirection="column" justifyContent={"center"} alignItems="center">
-                <Text>{Place}</Text>
-                <Text>{Comments}</Text>
+                <Text fontSize={"2xl"}>{Place}</Text>
+                <Text fontSize={"2xl"}>{Comments}</Text>
             </Box>
             <Box w="50%" display={"flex"} flexDirection="column" justifyContent={"center"} alignItems="center">
-                <Text>{date && date + ' ' + time}</Text>
+                <Text fontSize={"xl"}>{date && date + ' ' + time}</Text>
             </Box>
 
         </Box>

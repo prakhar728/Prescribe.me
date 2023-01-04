@@ -5,7 +5,6 @@ import { Outlet } from 'react-router-dom'
 const PatientSide = () => {
     return (
         <Box>
-            The Two sides
             <Outlet />
         </Box>
     )

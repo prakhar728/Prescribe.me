@@ -143,16 +143,16 @@ const Navbar = () => {
   const routes = [
     {
       name:"Doctor",
-      link:"/app/doctor"
+      link:"/app/doctor/markvisit"
     },
     {
       name:"Patient",
-      link:"/app/patient"
+      link:"/app/patient/records"
     },
   ]
 
   const activeStyle ={
-    background:"cp.1"
+    background:"#edf2f7"
   }
   return (
     <Flex>
@@ -164,7 +164,11 @@ const Navbar = () => {
         <Box w="40%" display="flex" alignItems="center" justifyContent="space-between" p={3} ml={2} >
           {routes.map((route,key)=>{
             return(
-              <Link as={RouterLink} to={route.link} key={key} fontSize={"3xl"}>
+              <Link as={RouterLink} to={route.link} key={key} fontSize={"3xl"} _hover={{
+                background: "rgba(130, 170, 227, 0.49)"
+              }} style={({ isActive }) =>
+              isActive ? activeStyle : undefined
+            }  padding={"6px 36px"} borderRadius="18px">
               {route.name}
             </Link>
             )
@@ -178,7 +182,7 @@ const Navbar = () => {
               color: "black",
             }}
           >Connect To Wallet</Button>}
-          {accounts && <Box border="1px" padding={2} borderRadius={10} borderColor="grey">  Wallet: {accounts.slice(0, 6)}...{accounts.slice(-4)} </Box>}
+          {accounts && <Box border="1px" padding={2} borderRadius={10} borderColor="grey" fontSize={"2xl"}>  Wallet: {accounts.slice(0, 6)}...{accounts.slice(-4)} </Box>}
 
         </Box>
       </Center>

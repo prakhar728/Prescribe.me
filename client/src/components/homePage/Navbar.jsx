@@ -17,11 +17,7 @@ const Navbar = () => {
     {
       name:"FAQ",
       link:"/FAQ"
-    },
-    {
-      name:"CONTACT",
-      link:"/CONTACT"
-    },
+    }
   ]
   return (
     <Box  >
@@ -34,7 +30,7 @@ const Navbar = () => {
         <Box w="40%" display="flex" alignItems="center" justifyContent="space-between" p={3} ml={2} >
           {routes.map((route,key)=>{
             return(
-              <Link as={RouterLink} to={route.link} _hover={{
+              <Link as={RouterLink} key={key} to={route.link} _hover={{
                 background: "rgba(130, 170, 227, 0.49)"
               }}
               _active={{
@@ -48,6 +44,13 @@ const Navbar = () => {
               </Link>
             )
           })}
+          <Link  to={"https://discord.gg/S4NMpXCt/"} _hover={{
+                background: "rgba(130, 170, 227, 0.49)"
+              }}
+              
+               paddingLeft={"10px"} paddingRight="10px" paddingTop="5px" paddingBottom="5px" borderRadius="10px" border="1px" borderColor={"transparent"} fontSize="xl">
+                CONTACT
+              </Link>
         </Box>
         <Spacer />
         <Box  w="15%" padding="2%" display={"flex"} alignItems="center" justifyContent={"center"}  >

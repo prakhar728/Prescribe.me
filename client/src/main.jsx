@@ -12,15 +12,15 @@ import ErrorPage from "./pages/Error";
 import { Provider } from 'react-redux'
 import { store } from './configureStore'
 import MainApp from './pages/MainApp';
-import DoctorMarkVisit from './pages/DoctorMarkVisit';
-import DoctorOrPatient from './pages/DoctorOrPatient';
-import DoctorViewRecord from './pages/DoctorViewRecord';
+import DoctorMarkVisit from './pages/Doctor/DoctorMarkVisit';
+import DoctorOrPatient from './pages/Doctor/DoctorOrPatient';
+import DoctorViewRecord from './pages/Doctor/DoctorViewRecord';
 import PatientSide from './pages/PatientSide';
 import PatientRecords from './pages/Patients/PatientRecords';
 import Features from './components/homePage/Features';
 import FaqSection from './components/homePage/FaqSection';
 import HomePage from './components/homePage/HomePage';
-import safeImage from "./assets/Safe.svg"
+import Doctor from './pages/Doctor'
 
 const colors = {
   brand: {
@@ -77,13 +77,19 @@ const router = createBrowserRouter([
       },
       {
         path: "doctor",
-        // element:<Doctors />
-        element: <DoctorMarkVisit />
+        element: <Doctor />,
+        children:[
+          {
+            path:"markvisit",
+            element:<DoctorMarkVisit />
+          },
+          {
+            path: "viewRecord",
+            element: <DoctorViewRecord />
+          },
+        ]
       },
-      {
-        path: "doctor/viewRecord",
-        element: <DoctorViewRecord />
-      },
+      
       {
         path: "patient",
         element: <PatientSide />,

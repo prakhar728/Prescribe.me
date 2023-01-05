@@ -6,9 +6,9 @@ const Nav = () => {
     background: "rgba(130, 170, 227, 0.49)"
   };
   return (
-    <Box w="20%"  display={"flex"} flexDirection="column" h="60%" alignItems={"center"} justifyContent="center">
+    <Box w="20%"  display={"flex"} flexDirection="column" h="60%" alignItems={"center"} justifyContent="center" marginLeft={"-1vw"}>
       <Box display={"flex"}  flexDirection="column" border='1px' w="100%" padding={"10%"} borderRadius={"20px"}>
-        <Link as={RouterLink} to="/app/doctor/" fontSize={"3xl"} w="100%" textAlign={"center"} style={({ isActive }) =>
+        <Link as={RouterLink} to="/app/doctor/markvisit" fontSize={"3xl"} w="100%" textAlign={"center"} style={({ isActive }) =>
           isActive ? activeStyle : undefined
         } margin={"6px"} borderRadius="20px">Mark Visits</Link>
         <Link as={RouterLink} to="/app/doctor/viewRecord" fontSize={"3xl"} w="100%" textAlign={"center"} style={({ isActive }) =>

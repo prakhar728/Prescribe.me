@@ -12,11 +12,12 @@ export const gatherRecords = createAsyncThunk(
             const instance = thunkApi.getState().wallet.instance;
             const response = await instance.showAllVisits(data);
             const recordsAll = []
-            for(let i=0;i<response.length;i++){
+            if(response.length)
+            {for(let i=0;i<response.length;i++){
                 let temp = response[i];
                 var d = new Date(parseInt(temp[0]) * 1000);
                 recordsAll.push(new Array(d,helperFunction(temp[1]),helperFunction(temp[2])))
-            }
+            }}
             console.log("The Response for Records",recordsAll);
             return recordsAll;
         } catch (error) {

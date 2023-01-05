@@ -23,11 +23,14 @@ const PatientRecords = () => {
   }, [records])
   return (
     <Box display="flex" flexDirection={"column"} alignItems="center" justifyContent={"center"}>
-      {patientRecords && patientRecords.map((record, key) => {
+      {patientRecords.length!=0? patientRecords.map((record, key) => {
         return (
           <RecordCard Place={record[1]} Comments={record[2]} Time={record[0]} key={key} />
         )
-      })}
+      }) :
+      <Box fontSize={"3xl"}>NO RECORDS HAVE BEEN MADE BY YOU YET! </Box>
+      }
+      {/* <RecordCard Place={"TEXT"} Comments={"TEXT"} Time={"DATE"} /> */}
     </Box>
   )
 }

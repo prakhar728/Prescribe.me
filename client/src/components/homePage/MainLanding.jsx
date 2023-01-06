@@ -19,7 +19,7 @@ const MainLanding = () => {
                             color: "#black",
                         }} 
                         borderRadius={40}
-                         > <Link as={RouterLink} to="/app/#/choice" fontWeight={"300"} 
+                         > <Link as={RouterLink} to="/app/choice" fontWeight={"300"} 
                          fontSize="2xl" padding="20px"> Less Gooo</Link> </Button>
                 </Box>
             </Box>

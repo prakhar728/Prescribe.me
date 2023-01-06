@@ -44,7 +44,7 @@ const Doctors = () => {
                         <Text border="1px" borderColor="grey" padding={2} textAlign={"Center"} borderRadius={10}>{currentDate}</Text>
                     </Box>
                     <Box width="80%" margin={4} display="flex" flexDirection={"column"} gap="24px">
-                        <Textarea placeholder='Enter the place of the organisation' size="md" value={place} onChang={e=>setplace(e.target.value)}/>
+                        <Textarea placeholder='Enter the place of the organisation' size="md" value={place} onChange={e=>setplace(e.target.value)}/>
                         <Textarea placeholder='Enter any additional comments that the patient should look out for!' value={comments} onChange={e=>setcomments(e.target.value)} siez="lg"/>
                     </Box>
                     <Box>

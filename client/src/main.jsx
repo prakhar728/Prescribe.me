@@ -6,6 +6,7 @@ import { extendTheme } from '@chakra-ui/react'
 import './index.css'
 import {
   createBrowserRouter,
+  createHashRouter,
   RouterProvider,
 } from "react-router-dom";
 import ErrorPage from "./pages/Error";
@@ -42,7 +43,7 @@ const colors = {
 
 const theme = extendTheme({ colors })
 
-const router = createBrowserRouter([
+const router = createHashRouter([
   {
     path: "/",
     element: <App />,

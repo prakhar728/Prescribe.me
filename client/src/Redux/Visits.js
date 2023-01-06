@@ -16,7 +16,7 @@ export const gatherRecords = createAsyncThunk(
             {for(let i=0;i<response.length;i++){
                 let temp = response[i];
                 var d = new Date(parseInt(temp[0]) * 1000);
-                recordsAll.push(new Array(d,helperFunction(temp[1]),helperFunction(temp[2])))
+                recordsAll.push(new Array(d,temp[1],temp[2]))
             }}
             console.log("The Response for Records",recordsAll);
             return recordsAll;

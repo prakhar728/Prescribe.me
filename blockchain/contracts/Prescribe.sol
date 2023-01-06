@@ -5,14 +5,14 @@ contract Prescribe {
     address owner;
     struct prescriptionForm {
         uint256 datePrescribed;
-        bytes32 place;
+        string place;
         bytes32 hash;
     }
 
     struct history {
         uint256 dateVisited;
-        bytes32 place;
-        bytes32 comments;
+        string place;
+        string comments;
         address patient;
     }
 
@@ -32,8 +32,8 @@ contract Prescribe {
     }
 
     function markVisit(
-        bytes32 _place,
-        bytes32 _comments,
+        string memory _place,
+        string memory _comments,
         address patient
     ) public organisationAllowed {
         medicalHistory[patient].push(

@@ -29,10 +29,10 @@ const Doctors = () => {
     }, [address,instance])
     
     const markVisit = async() =>{
-        const bytes32Place = ethers.utils.formatBytes32String(place);
+        // const bytes32Place = ethers.utils.formatBytes32String(place);
         // const bytes32Addresss = ethers.utils.formatBytes32String(patientAddress);
-        const bytes32Comment = ethers.utils.formatBytes32String(comments);
-       await (await instancesContract.markVisit(bytes32Place,bytes32Comment,patientAddress)).wait();
+        // const bytes32Comment = ethers.utils.formatBytes32String(comments);
+       await (await instancesContract.markVisit(place,comments,patientAddress)).wait();
     }
    
     return (

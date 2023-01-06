@@ -23,7 +23,7 @@ const FaqSection = () => {
             <Heading as="h1" size="2xl" w="100%" textAlign={"Center"} mt={10}>
                 Frequently Asked Questions
             </Heading>
-            <Heading as="h2" size="md" w="100%" textAlign={"Center"}>
+            <Heading as="h2" size="md" w="100%" textAlign={"Center"} m={"8px"}>
                 Feel free to ask. There are no Dumb questions!
             </Heading>
             <Flex  height="80%">

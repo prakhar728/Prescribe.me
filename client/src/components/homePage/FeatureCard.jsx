@@ -3,7 +3,7 @@ import React from 'react'
 
 const FeatureCard = ({ title, line, src, uniqueKey }) => {
   return (
-    <Box key={uniqueKey} w="18%"  background={"#82AAE3"} borderRadius="20px" h="80%" display="flex" flexDirection={"column"} alignItems="center" justifyContent={"center"} padding="1%" >
+    <Box key={uniqueKey} w="18%"  background={"rgb(130, 170, 227,0.3)"} borderRadius="20px" h="80%" display="flex" flexDirection={"column"} alignItems="center" justifyContent={"center"} padding="1%" >
       <Box w="100%" h="100%" display="flex" flexDirection={"column"} alignItems="center" border="1px" borderRadius={"10px"} padding="5%" justifyContent={"space-around"} >
         <Box display={"flex"} alignItems="center" justifyContent={"center"}  height="50%">
         <Image src={src} alt="Feature card" width="70%" />

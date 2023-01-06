@@ -23,7 +23,7 @@ const PatientRecords = () => {
   }, [records])
   return (
     <Box display="flex" flexDirection={"column"} alignItems="center" justifyContent={"center"}>
-      {patientRecords.length!=0? patientRecords.map((record, key) => {
+      { patientRecords &&patientRecords.length!=0? patientRecords.map((record, key) => {
         return (
           <RecordCard Place={record[1]} Comments={record[2]} Time={record[0]} key={key} />
         )

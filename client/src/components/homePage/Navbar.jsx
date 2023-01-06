@@ -11,12 +11,12 @@ const Navbar = () => {
 
   const routes = [
     {
-      name:"Home",
-      link:"/"
+      name: "Home",
+      link: "/"
     },
     {
-      name:"FAQ",
-      link:"/FAQ"
+      name: "FAQ",
+      link: "/FAQ"
     }
   ]
   return (
@@ -28,44 +28,44 @@ const Navbar = () => {
         <Spacer />
         <Spacer />
         <Box w="40%" display="flex" alignItems="center" justifyContent="space-between" p={3} ml={2} >
-          {routes.map((route,key)=>{
-            return(
+          {routes.map((route, key) => {
+            return (
               <Link as={RouterLink} key={key} to={route.link} _hover={{
                 background: "rgba(130, 170, 227, 0.49)"
               }}
-              _active={{
-                background: "rgba(130, 170, 227, 0.49)"
-              }}
-              style={({ isActive }) =>
+                _active={{
+                  background: "rgba(130, 170, 227, 0.49)"
+                }}
+                style={({ isActive }) =>
                   isActive ? activeStyle : undefined
                 }
-               paddingLeft={"10px"} paddingRight="10px" paddingTop="5px" paddingBottom="5px" borderRadius="10px" border="1px" borderColor={"transparent"} fontSize="xl">
+                paddingLeft={"10px"} paddingRight="10px" paddingTop="5px" paddingBottom="5px" borderRadius="10px" border="1px" borderColor={"transparent"} fontSize="xl">
                 {route.name}
               </Link>
             )
           })}
-          <Link  to={"https://discord.gg/S4NMpXCt/"} _hover={{
-                background: "rgba(130, 170, 227, 0.49)"
-              }}
-              
-               paddingLeft={"10px"} paddingRight="10px" paddingTop="5px" paddingBottom="5px" borderRadius="10px" border="1px" borderColor={"transparent"} fontSize="xl">
-                CONTACT
-              </Link>
+          <Link to={"https://discord.gg/S4NMpXCt/"} _hover={{
+            background: "rgba(130, 170, 227, 0.49)"
+          }}
+
+            paddingLeft={"10px"} paddingRight="10px" paddingTop="5px" paddingBottom="5px" borderRadius="10px" border="1px" borderColor={"transparent"} fontSize="xl">
+            CONTACT
+          </Link>
         </Box>
         <Spacer />
-        <Box  w="15%" padding="2%" display={"flex"} alignItems="center" justifyContent={"center"}  >
+        <Box w="15%" padding="2%" display={"flex"} alignItems="center" justifyContent={"center"}  >
           <Button variant="solid" backgroundColor="#82AAE3" color="black"
             _hover={{
               background: "#82AAE3",
               color: "#black",
-            }} 
+            }}
             padding="12%"
             borderRadius={40}
           >
             <Link as={RouterLink} to="/app/choice" fontSize={"xl"} padding={"2%"}>  Go to the App</Link>
           </Button>
         </Box>
-        
+
       </Box>
     </Box>
   )

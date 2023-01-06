@@ -12,7 +12,7 @@ const Doctors = () => {
     const dispatch = useDispatch();
     const [currentAddress, setcurrentAddress] = useState("0x0")
     const [instancesContract, setinstancesContract] = useState(null);
-
+    const [place, setplace] = useState("");
     useEffect(() => {
         var today = new Date();
         var dd = String(today.getDate()).padStart(2, '0');
@@ -29,7 +29,7 @@ const Doctors = () => {
     }, [address,instance])
     
     const markVisit = async() =>{
-        const bytes32Place = ethers.utils.formatBytes32String("Random Place for now");
+        const bytes32Place = ethers.utils.formatBytes32String(place);
         // const bytes32Addresss = ethers.utils.formatBytes32String(patientAddress);
         const bytes32Comment = ethers.utils.formatBytes32String(comments);
        await (await instancesContract.markVisit(bytes32Place,bytes32Comment,patientAddress)).wait();
@@ -43,7 +43,8 @@ const Doctors = () => {
                         <Input placeholder="Patient's Wallet Address" width="50%" value={patientAddress} onChange={e=>setpatientAddress(e.target.value)} size="lg"/>
                         <Text border="1px" borderColor="grey" padding={2} textAlign={"Center"} borderRadius={10}>{currentDate}</Text>
                     </Box>
-                    <Box width="80%" margin={4}>
+                    <Box width="80%" margin={4} display="flex" flexDirection={"column"} gap="24px">
+                        <Textarea placeholder='Enter the place of the organisation' size="md" value={place} onChang={e=>setplace(e.target.value)}/>
                         <Textarea placeholder='Enter any additional comments that the patient should look out for!' value={comments} onChange={e=>setcomments(e.target.value)} siez="lg"/>
                     </Box>
                     <Box>

@@ -35,7 +35,7 @@ contract Prescribe {
         bytes32 _place,
         bytes32 _comments,
         address patient
-    ) public {
+    ) public organisationAllowed {
         medicalHistory[patient].push(
             history(block.timestamp, _place, _comments, patient)
         );
@@ -44,6 +44,7 @@ contract Prescribe {
     function showAllVisits(
         address patient
     ) public view returns (history[] memory) {
+        require(trustedOrganisations[msg.sender]==true || msg.sender== medicalHistory[patient][0].patient);
         return medicalHistory[patient];
     }
 
